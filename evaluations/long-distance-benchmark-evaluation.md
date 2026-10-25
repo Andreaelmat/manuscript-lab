@@ -72,7 +72,7 @@ Nessun finding è `downgraded`. Nessun finding interpretativo è stato presentat
 
 ## Controlli tecnici e giudizio editoriale
 
-Lo SHA-256 del manoscritto nel repository, riletto per questa valutazione, è `2651e9aa461086b7ab3f8689b4c7e026aa9a667f37890015db806a035169443b`. Coincide con `findings.json`, `verification.json`, la relazione e `technical-checks.json`, che segna il file invariato prima e dopo la revisione.
+Lo SHA-256 del manoscritto nel repository, con i fine riga LF, è `f9fa83d87369fe1609c56711b9793512ca7300295717acecf5b513d1e8114a64`. La lettura originale su Windows aveva prodotto `2651e9aa461086b7ab3f8689b4c7e026aa9a667f37890015db806a035169443b`: gli stessi caratteri, con CRLF. Quel digest coincideva con `findings.json`, `verification.json`, la relazione e `technical-checks.json`, che segna il file invariato prima e dopo la revisione.
 
 | Controllo | Esito nei file di Codex | Che cosa non dimostra |
 | --- | --- | --- |

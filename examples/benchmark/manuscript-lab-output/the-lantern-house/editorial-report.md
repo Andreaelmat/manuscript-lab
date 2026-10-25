@@ -1,7 +1,7 @@
 # Relazione editoriale: The Lantern House
 
 - Manoscritto: `the-lantern-house.md`
-- SHA-256: `866affb434a228f4b9da343a1777015898e53160ab94cabe3aa52899fe4f36df`
+- SHA-256: `eb25c9c1e9cd10135a36c810a173b050705719e99623192736ccdc45a6c1ea86`
 - Modalità: revisione completa, con audit di continuità sullo stesso testo
 - Profondità: deep
 - Ambito: quattro capitoli confermati, `c001`–`c004`, letti per intero

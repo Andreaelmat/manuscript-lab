@@ -16,7 +16,7 @@ Use the Python standard library. The supported interpreter is Python 3.10 or new
 
 ## Privacy
 
-Do not commit a private manuscript, a review of one, or an index, extract, or ledger made from one. Do not commit credentials or absolute paths that contain a home directory or a person's name. Checked-in example output uses a repository-relative source path.
+Do not commit a private manuscript, a review of one, or an index, extract, or ledger made from one. Do not commit credentials or absolute paths that contain a home directory or a person's name. Checked-in example output uses a repository-relative source path. Text files use LF line endings, as set in `.gitattributes`, because a manuscript hash is the SHA-256 of the file bytes.
 
 The public fixtures under `examples/` are part of this project and are covered by `LICENSE`. Do not replace them with someone else's copyrighted text.
 

@@ -14,9 +14,9 @@ Questa scheda giudica quella revisione. Non giudica il romanzo e non gli assegna
 | Findings | 5 schede, F-001–F-005 |
 | Verificatore | 14 citazioni, 14 `verified_exact`, 0 `not_found`, 0 errori di schema |
 | Relazione | dodici sezioni, in italiano, senza voto numerico |
-| SHA-256 del manoscritto riletto per questa valutazione | `866affb434a228f4b9da343a1777015898e53160ab94cabe3aa52899fe4f36df` |
+| SHA-256 del manoscritto riletto per questa valutazione | `eb25c9c1e9cd10135a36c810a173b050705719e99623192736ccdc45a6c1ea86` |
 | Coincide con l'indice, i findings e la relazione | sì |
-| Byte del file | 2565, invariati rispetto all'indice |
+| Byte del file | 2516, invariati rispetto all'indice |
 
 Il manoscritto risulta non modificato. Il verificatore non ha respinto citazioni. `editorial_judgment` nel referto è sempre `not_assessed`: il programma non ha confermato le interpretazioni.
 

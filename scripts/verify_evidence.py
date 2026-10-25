@@ -207,8 +207,13 @@ def _hash_error(index: dict[str, Any], findings: dict[str, Any]) -> str | None:
     Returns:
         An error string, or None when the hashes match.
     """
-    if findings.get("manuscript_sha256") != index["source"].get("sha256"):
-        return "manuscript_sha256 does not match the index source"
+    findings_hash = findings.get("manuscript_sha256")
+    index_hash = index["source"].get("sha256")
+    if findings_hash != index_hash:
+        return (
+            "manuscript_sha256 does not match the index source: "
+            f"findings has {findings_hash}, index has {index_hash}"
+        )
     return None
 
 

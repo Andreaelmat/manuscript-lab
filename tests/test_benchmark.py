@@ -8,6 +8,7 @@ from __future__ import annotations
 
 import hashlib
 import json
+import subprocess
 import tempfile
 import unittest
 from pathlib import Path
@@ -67,6 +68,7 @@ class BenchmarkTests(unittest.TestCase):
                 [str(FIXTURE), "--output", str(index_path)],
                 cwd=root,
             )
+            report_path = root / "verification.json"
             completed = support.run_script(
                 "verify_evidence.py",
                 [
@@ -75,17 +77,25 @@ class BenchmarkTests(unittest.TestCase):
                     "--findings",
                     str(FINDINGS),
                     "--output",
-                    str(root / "verification.json"),
+                    str(report_path),
                 ],
                 cwd=root,
             )
-            self.assertEqual(completed.returncode, 0, completed.stdout + completed.stderr)
-            report = json.loads((root / "verification.json").read_text(encoding="utf-8"))
-            self.assertEqual(report["schema_errors"], [])
-            self.assertEqual(report["semantic_errors"], [])
-            self.assertTrue(all(item["quote_check"] == "verified_exact" for item in report["results"]))
-            self.assertTrue(all(item["editorial_judgment"] == "not_assessed" for item in report["results"]))
-            self.assertEqual(hashlib.sha256(FIXTURE.read_bytes()).hexdigest(), before_hash())
+            diagnostic = _verification_diagnostic(completed, index_path, report_path)
+            self.assertEqual(completed.returncode, 0, diagnostic)
+            report = json.loads(report_path.read_text(encoding="utf-8"))
+            self.assertEqual(report["schema_errors"], [], diagnostic)
+            self.assertEqual(report["semantic_errors"], [], diagnostic)
+            self.assertTrue(
+                all(item["quote_check"] == "verified_exact" for item in report["results"]),
+                diagnostic,
+            )
+            self.assertTrue(
+                all(item["editorial_judgment"] == "not_assessed" for item in report["results"]),
+                diagnostic,
+            )
+            self.assertNotIn(b"\r", FIXTURE.read_bytes(), diagnostic)
+            self.assertEqual(hashlib.sha256(FIXTURE.read_bytes()).hexdigest(), before_hash(), diagnostic)
 
     def test_report_template_has_the_twelve_sections(self) -> None:
         """The report template keeps the required sections and refuses a score."""
@@ -121,6 +131,42 @@ class BenchmarkTests(unittest.TestCase):
         hits = [item for item in document["paragraphs"] if snippet in item["text"]]
         self.assertEqual(len(hits), 1, snippet)
         return hits[0]["chapter_id"]
+
+
+def _verification_diagnostic(
+    completed: subprocess.CompletedProcess[str],
+    index_path: Path,
+    report_path: Path,
+) -> str:
+    """Collect the hashes and the verification report for a failed assertion.
+
+    Args:
+        completed: The verifier process.
+        index_path: Index written for this run.
+        report_path: Verification report path, which may be missing.
+
+    Returns:
+        Stdout, stderr, the fixture and index digests, and the report text.
+    """
+    fixture_bytes = FIXTURE.read_bytes()
+    findings = json.loads(FINDINGS.read_text(encoding="utf-8"))
+    lines = [
+        completed.stdout,
+        completed.stderr,
+        f"findings manuscript_sha256: {findings.get('manuscript_sha256')}",
+        f"fixture sha256: {hashlib.sha256(fixture_bytes).hexdigest()}",
+        f"fixture byte_length: {len(fixture_bytes)}",
+        f"fixture contains CR: {bytes([13]) in fixture_bytes}",
+    ]
+    if index_path.is_file():
+        source = json.loads(index_path.read_text(encoding="utf-8")).get("source", {})
+        lines.append(f"index sha256: {source.get('sha256')}")
+        lines.append(f"index byte_length: {source.get('byte_length')}")
+    if report_path.is_file():
+        lines.append(report_path.read_text(encoding="utf-8"))
+    else:
+        lines.append("verification.json was not written")
+    return "\n".join(line for line in lines if line)
 
 
 def before_hash() -> str:
