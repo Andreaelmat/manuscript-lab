@@ -1,5 +1,7 @@
 # Manuscript Lab
 
+[![Tests](https://github.com/Andreaelmat/manuscript-lab/actions/workflows/tests.yml/badge.svg)](https://github.com/Andreaelmat/manuscript-lab/actions/workflows/tests.yml)
+
 Open-source Agent Skill for evidence-grounded editorial review of fiction manuscripts. It helps an agent read a long narrative, separate a possible factual problem from an interpretation, and check quotations against the original text.
 
 **Public release:** `v0.1.0` (Experimental).
