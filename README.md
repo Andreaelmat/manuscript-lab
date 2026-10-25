@@ -1,10 +1,12 @@
+
 # Manuscript Lab
 
 [![Tests](https://github.com/Andreaelmat/manuscript-lab/actions/workflows/tests.yml/badge.svg)](https://github.com/Andreaelmat/manuscript-lab/actions/workflows/tests.yml)
+[![skills.sh](https://skills.sh/b/Andreaelmat/manuscript-lab)](https://skills.sh/Andreaelmat/manuscript-lab)
 
 Open-source Agent Skill for evidence-grounded editorial review of fiction manuscripts. It helps an agent read a long narrative, separate a possible factual problem from an interpretation, and check quotations against the original text.
 
-**Public release:** `v0.1.0` (Experimental).
+**Public release:** `v0.1.0` (Experimental).  
 **Methodology version** recorded in `SKILL.md`: `1.1.1`.
 
 Manuscript Lab is not a human editor. It does not guarantee that every error will be found, and it does not certify the quality of a novel. Two models can disagree on an interpretive finding. The shared part is the procedure, the index, and the programmatic quotation check.
@@ -43,25 +45,49 @@ Word counts in the index are navigation counts (`\S+` tokens). They are not a co
 
 ## Requirements
 
-- Python 3.10 or newer on Windows, macOS, or Linux. The standard library is the only dependency. There is no `requirements.txt` and no package to install. On Windows, `py -3` is an acceptable launcher. On macOS and Linux, `python3` is the same command.
+- Python 3.10 or newer on Windows, macOS, or Linux. The standard library is the only Python dependency. There is no `requirements.txt` and no Python package to install. On Windows, `py -3` is an acceptable launcher. On macOS and Linux, use `python3`.
 - An agent that can read files and run Python. Cursor, Codex, and Claude Code can load the same directory. No client SDK is required.
-- The local test suite was run with Python 3.12.10. The workflow in `.github/workflows/tests.yml` also requests 3.10. That job runs after the repository is on GitHub.
+- Node.js 22.20 or newer if using the optional Skills CLI installation method.
+- The local test suite was run with Python 3.12.10. GitHub Actions tests the repository with Python 3.10 and 3.12.
 
-The scripts do not need a network connection or an API key. The agent you use may still send the manuscript to its model provider. See [Privacy](#privacy).
+The Python scripts do not need a network connection or an API key. The agent you use may still send the manuscript to its model provider. See [Privacy](#privacy).
 
 ## Installation
 
-The installable directory is this folder, and it must stay named `manuscript-lab`, because the Agent Skills `name` has to match the parent directory.
+### Quick installation (recommended)
+
+The easiest way to install Manuscript Lab is through the [Skills CLI](https://skills.sh):
+
+```bash
+npx skills add Andreaelmat/manuscript-lab
+```
+
+Run this command from the project where you want to use the skill.
+
+The CLI downloads Manuscript Lab from GitHub and lets you choose the target agents and installation scope. Project installation is the default. You can also choose a global installation to make the skill available across projects.
+
+The skill has been successfully discovered and installed through the Skills CLI.
+
+### Manual installation
+
+You can also clone the repository and use the included Python installer.
+
+```bash
+git clone https://github.com/Andreaelmat/manuscript-lab.git
+cd manuscript-lab
+```
+
+The installable directory must stay named `manuscript-lab`, because the Agent Skills `name` has to match the parent directory.
 
 From this directory, check the package:
 
-```text
+```bash
 python scripts/install_skill.py --check
 ```
 
 Install for one client. A link stays current when this directory changes. Use `--copy` when a link is not available. Copies go stale until you install again with `--force`.
 
-```text
+```bash
 python scripts/install_skill.py --agent cursor --scope project --project /path/to/your-book
 python scripts/install_skill.py --agent codex --scope user
 python scripts/install_skill.py --agent claude --scope project --project /path/to/your-book
@@ -79,6 +105,8 @@ Cursor also scans `.agents/skills/` and `.claude/skills/`. Installing all three 
 
 Open the project where the skill is installed and ask in ordinary language. You can set the report language, the mode, the depth (`survey`, `standard`, or `deep`), and a chapter range.
 
+Example requests:
+
 - Analyze this novel as a professional editor.
 - Run a full editorial review. Produce an editorial report without changing the text.
 - Check inconsistencies between chapters.
@@ -90,7 +118,7 @@ The agent writes `extract.json`, `index.json`, `index.md`, `findings.json`, `ver
 
 You can index a file yourself. Run the commands from any working directory by passing absolute paths. The scripts find their schemas from their own location.
 
-```text
+```bash
 python scripts/index_manuscript.py path/to/novel.md --output index.json --outline index.md
 python scripts/verify_ledger.py --index index.json --ledger narrative-ledger.json --output ledger-check.json
 python scripts/verify_decision_audit.py --index index.json --audit decision-audit.json --output decision-check.json
@@ -121,7 +149,9 @@ A continuity review and a dialogue-style review do not require the decision audi
 
 ## Narrative fact ledger
 
-During a `full` or `continuity` review at `standard` or `deep` depth, the agent keeps a ledger of claims that later continuity checks may need: what was narrated, what a character said that may be false, what a character knows, and what is still a hypothesis. Each entry points at paragraph ids. The script `verify_ledger.py` checks the shape and the quotations. It does not extract the facts, and it does not prove that two claims conflict. `full_reading_established` in its output stays false. Listing a chapter id does not mean that chapter was read in full.
+During a `full` or `continuity` review at `standard` or `deep` depth, the agent keeps a ledger of claims that later continuity checks may need: what was narrated, what a character said that may be false, what a character knows, and what is still a hypothesis. Each entry points at paragraph ids.
+
+The script `verify_ledger.py` checks the shape and the quotations. It does not extract the facts, and it does not prove that two claims conflict. `full_reading_established` in its output stays false. Listing a chapter id does not mean that chapter was read in full.
 
 The shape is `templates/narrative-ledger.json`. The procedure is `references/narrative-ledger.md`.
 
@@ -206,9 +236,3 @@ These items are not in `v0.1.0`:
 - Further work on semantic checks. Quotation and shape checks will stay separate from interpretive judgment.
 
 No dates are attached. A later release will say what landed.
-
-## License and contributing
-
-MIT. See `LICENSE`. The scripts, the references, and the original fixtures in `examples/` are part of that grant. There are no third-party runtime dependencies.
-
-Contributions, commit style, and the privacy rule for private manuscripts are in `CONTRIBUTING.md`. Vulnerability reports are in `SECURITY.md`.
