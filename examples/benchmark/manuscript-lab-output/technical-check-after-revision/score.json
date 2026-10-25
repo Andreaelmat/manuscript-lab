@@ -1,0 +1,27 @@
+{
+  "format_version": 1,
+  "document_type": "score",
+  "rule": "A positive prediction is a finding whose nature is factual and whose editorial status is confirmed. Rejected, downgraded, unreviewed, interpretive, and strength findings are not positive predictions.",
+  "positive_prediction_ids": [
+    "F-001",
+    "F-002"
+  ],
+  "excluded": {
+    "rejected": [
+      "F-005"
+    ],
+    "downgraded": [],
+    "unreviewed": [],
+    "interpretive": [
+      "F-003"
+    ],
+    "strength": [
+      "F-004"
+    ]
+  },
+  "counts": {
+    "positive_predictions": 2
+  },
+  "semantic_correctness": "not_assessed",
+  "note": "This count is not a score of the novel and does not prove the report's prose."
+}

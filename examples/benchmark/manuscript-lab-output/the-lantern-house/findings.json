@@ -1,0 +1,228 @@
+{
+  "format_version": 1,
+  "document_note": "Revisione full con audit di continuità, profondità deep, report in italiano. La scheda dei problemi attesi del benchmark non è stata consultata.",
+  "manuscript_sha256": "866affb434a228f4b9da343a1777015898e53160ab94cabe3aa52899fe4f36df",
+  "mode": "full",
+  "depth": "deep",
+  "report_language": "it",
+  "scope_chapters": [
+    "c001",
+    "c002",
+    "c003",
+    "c004"
+  ],
+  "independent_review": {
+    "requested": false,
+    "performed": false,
+    "reviewer_model": "",
+    "same_as_primary_model": true,
+    "note": "Riletura dello stesso modello dopo la lettura integrale. Non è una revisione indipendente."
+  },
+  "findings": [
+    {
+      "id": "F-001",
+      "category": "continuity",
+      "title": "Il 12 marzo è insieme martedì e mercoledì",
+      "description": "Il narratore colloca la stessa data di calendario in due giorni della settimana diversi, e nessun passaggio successivo corregge il giorno.",
+      "chapters": [
+        "c001",
+        "c002"
+      ],
+      "paragraph_ids": [
+        "p0002-5301192b",
+        "p0012-92d34441"
+      ],
+      "evidence": [
+        {
+          "paragraph_id": "p0002-5301192b",
+          "quote": "The rain reached the coast on Tuesday, 12 March, and turned the lane to the inn into a strip of black mud.",
+          "quote_check": "verified_exact"
+        },
+        {
+          "paragraph_id": "p0012-92d34441",
+          "quote": "On Wednesday, 12 March, the rain had not stopped.",
+          "quote_check": "verified_exact"
+        }
+      ],
+      "explanation": "Entrambe le frasi sono affermazioni del narratore, non un ricordo attribuito a Elena e non una bugia di un personaggio. Il 12 marzo non può essere martedì e mercoledì. Il lunedì del capitolo 2 è un flashback esplicito e non entra in questo contrasto.",
+      "narrative_impact": "L'ordine delle scene si segue ancora, ma il lettore che usa le date di apertura per collocare l'arrivo, il patto «prima di mattina» e la lettera del crepuscolo non ha un calendario possibile.",
+      "priority": "medium",
+      "judgment_type": "factual",
+      "suggested_intervention": "Rendere coerente il giorno della settimana del 12 marzo, oppure attribuire una delle due formule a un errore dichiarato di un personaggio.",
+      "counterarguments": [
+        "La sequenza resta leggibile senza il giorno della settimana: arrivo, patto, lettera al crepuscolo, mattina. Il fatto è falso, ma la trama di Marco non dipende dal nome del giorno."
+      ],
+      "verification_status": "confirmed",
+      "uncertainty": "Bassa sull'incompatibilità delle due frasi. Il peso resta medio, non alto, proprio perché l'ordine degli eventi si capisce anche con l'etichetta sbagliata."
+    },
+    {
+      "id": "F-002",
+      "category": "character",
+      "title": "Gli occhi di Elena sono verdi e poi blu",
+      "description": "Il narratore attribuisce a Elena occhi verdi nel capitolo 1 e occhi blu nel capitolo 3, senza un cambiamento dichiarato.",
+      "chapters": [
+        "c001",
+        "c003"
+      ],
+      "paragraph_ids": [
+        "p0003-77d1bf48",
+        "p0018-62924bea",
+        "p0020-a55b2b9c"
+      ],
+      "evidence": [
+        {
+          "paragraph_id": "p0003-77d1bf48",
+          "quote": "Her green eyes stung from the salt wind.",
+          "quote_check": "verified_exact"
+        },
+        {
+          "paragraph_id": "p0018-62924bea",
+          "quote": "Her blue eyes were bloodshot, and the crack in the glass split the left one in two.",
+          "quote_check": "verified_exact"
+        },
+        {
+          "paragraph_id": "p0020-a55b2b9c",
+          "quote": "Elena closed the ledger.",
+          "quote_check": "verified_exact"
+        }
+      ],
+      "explanation": "Il verde è un attributo del narratore, non un effetto del sale: il sale spiega il bruciore. Nel capitolo 3 il vetro incrinato divide l'occhio, ma la frase dice che gli occhi sono blu. Il paragrafo in cui Elena chiude il registro lega quel «Her» alla stessa donna, e nel libro non compare un'altra donna.",
+      "narrative_impact": "La trama non usa il colore degli occhi, però il narratore lo presenta due volte come un fatto stabile. Il lettore non sa quale descrizione del corpo sia affidabile.",
+      "priority": "medium",
+      "judgment_type": "factual",
+      "suggested_intervention": "Tenere un solo colore nei due passaggi, a meno che il testo non dichiari un motivo del cambiamento.",
+      "counterarguments": [
+        "Il pronome del capitolo 3 potrebbe non riferirsi a Elena. È una lettura debole: non c'è un'altra donna, e il paragrafo successivo la nomina nella stessa mattina."
+      ],
+      "verification_status": "confirmed",
+      "uncertainty": "Bassa. Non c'è travestimento, intervallo o metafora che trasformi il verde in blu."
+    },
+    {
+      "id": "F-003",
+      "category": "repetition",
+      "title": "L'anno 1888 viene ridetto senza una funzione nuova",
+      "description": "Dopo la targa del capitolo 1, l'anno di fondazione ritorna come frase isolata e poi due volte nella battuta di un cliente a cui nessuno l'ha chiesto.",
+      "chapters": [
+        "c001",
+        "c002",
+        "c003"
+      ],
+      "paragraph_ids": [
+        "p0004-3addb449",
+        "p0013-63e32715",
+        "p0019-d15ea036"
+      ],
+      "evidence": [
+        {
+          "paragraph_id": "p0004-3addb449",
+          "quote": "The inn had been founded in 1888. A brass plate said so beside the key rack, and Tomas wiped it with his sleeve as if the date might smear.",
+          "quote_check": "verified_exact"
+        },
+        {
+          "paragraph_id": "p0013-63e32715",
+          "quote": "The inn had been founded in 1888.",
+          "quote_check": "verified_exact"
+        },
+        {
+          "paragraph_id": "p0019-d15ea036",
+          "quote": "A guest buttered his bread and said, \"The inn was founded in 1888.\" No one had asked. He nodded at his own remark and added, \"Founded in 1888, yes.\"",
+          "quote_check": "verified_exact"
+        }
+      ],
+      "explanation": "La prima occorrenza lavora: la targa è un oggetto e il gesto di Tomas le dà un carattere. La frase del capitolo 2 non aggiunge pressione, informazione o voce. Nel capitolo 3 il narratore dice che nessuno aveva chiesto l'anno, e il cliente lo ripete comunque.",
+      "narrative_impact": "Il mistero di Marco non ne soffre. Ne soffre la colazione del capitolo 3, che si ferma su un dato già noto, e il capitolo 2, che inserisce un rigo senza conseguenza.",
+      "priority": "low",
+      "judgment_type": "interpretive",
+      "suggested_intervention": "Conservare la targa del capitolo 1. Togliere la frase isolata del capitolo 2. Nel capitolo 3 lasciare la battuta solo se deve caratterizzare il cliente; altrimenti basta un solo accenno.",
+      "counterarguments": [
+        "La doppia battuta del cliente può essere il ritratto di chi parla a vuoto, e il narratore lo segnala. In quella lettura va tagliato il rigo del capitolo 2, non necessariamente il cliente."
+      ],
+      "verification_status": "confirmed",
+      "uncertainty": "Media sul confine del taglio. Bassa sul fatto che il rigo isolato del capitolo 2 non aggiunge nulla alla targa."
+    },
+    {
+      "id": "F-004",
+      "category": "strength",
+      "title": "Il patto della soffitta regge",
+      "description": "Elena vuole una stanza, Tomas vuole il registro copiato, e la scena si chiude senza rinegoziare il prezzo.",
+      "chapters": [
+        "c001"
+      ],
+      "paragraph_ids": [
+        "p0007-ca912f37",
+        "p0008-a2a8dabe"
+      ],
+      "evidence": [
+        {
+          "paragraph_id": "p0007-ca912f37",
+          "quote": "There is an attic. It leaks. Copy these pages before morning and the room is yours.",
+          "quote_check": "verified_exact"
+        },
+        {
+          "paragraph_id": "p0008-a2a8dabe",
+          "quote": "Elena set her wet gloves on the ledger and waited. She wanted the room. He wanted the pages copied. Neither of them named the price again.",
+          "quote_check": "verified_exact"
+        }
+      ],
+      "explanation": "C'è un desiderio, un ostacolo e un esito diverso: Elena non se ne va, e il prezzo resta non detto. Il dialogo basta a far capire lo scambio. La frase finale aggiunge che nessuno lo nomina di nuovo.",
+      "narrative_impact": "La scena va protetta. È il momento in cui Elena ottiene la soffitta in cui, nel capitolo 4, si trova Marco, e in cui nasce il registro che poi torna quadrato.",
+      "priority": "none",
+      "judgment_type": "interpretive",
+      "suggested_intervention": "None.",
+      "counterarguments": [
+        "Le frasi «She wanted the room» e «He wanted the pages copied» ripetono termini già chiari nel dialogo. Non bastano a indebolire la scena, perché la clausola sul prezzo taciuto è l'informazione nuova."
+      ],
+      "verification_status": "confirmed",
+      "uncertainty": "Bassa sul funzionamento della scena. Un ritocco di quelle due frasi sarebbe una preferenza di stile, non una necessità."
+    },
+    {
+      "id": "F-005",
+      "category": "continuity",
+      "title": "La morte di Marco e la sua lettera non sono un errore aperto",
+      "description": "Tomas dice che Marco è annegato. Una lettera firmata Marco arriva il giorno dopo, nel tempo del racconto. Il capitolo 4 dichiara che l'annegamento era inventato e che Marco è vivo.",
+      "chapters": [
+        "c001",
+        "c002",
+        "c004"
+      ],
+      "paragraph_ids": [
+        "p0009-c055f756",
+        "p0015-963b80ed",
+        "p0022-3cb54ae3",
+        "p0023-aceb760d"
+      ],
+      "evidence": [
+        {
+          "paragraph_id": "p0009-c055f756",
+          "quote": "My brother Marco drowned in the inlet",
+          "quote_check": "verified_exact"
+        },
+        {
+          "paragraph_id": "p0015-963b80ed",
+          "quote": "I am in the capital. Do not tell them I can still write. — Marco",
+          "quote_check": "verified_exact"
+        },
+        {
+          "paragraph_id": "p0022-3cb54ae3",
+          "quote": "Marco was in the attic, alive, with ink on his fingers. The letter was his. Tomas had invented the drowning for strangers who asked too many questions.",
+          "quote_check": "verified_exact"
+        },
+        {
+          "paragraph_id": "p0023-aceb760d",
+          "quote": "I never drowned,\" Marco said. \"He tells that story so people stop looking.",
+          "quote_check": "verified_exact"
+        }
+      ],
+      "explanation": "La prima versione è dialogo di Tomas, non una conferma del narratore. «Wrong house» è già una resistenza sospetta. Il narratore, nel capitolo 4, scioglie il contrasto: la lettera è autentica e l'annegamento è una storia per gli estranei. Elena, arrivata quella notte, è una di loro.",
+      "narrative_impact": "Il contrasto è la pressione del mistero, non un fatto impossibile lasciato in piedi. Trattarlo come errore di continuità cancellerebbe la rivelazione che il finale paga.",
+      "priority": "none",
+      "judgment_type": "factual",
+      "suggested_intervention": "None.",
+      "counterarguments": [
+        "Chi si ferma al capitolo 2 può giudicare incompatibili l'annegamento e la lettera. Questa lettura non sopravvive al capitolo 4, che nomina l'invenzione e mostra Marco vivo."
+      ],
+      "verification_status": "rejected",
+      "uncertainty": "Bassa sulla risoluzione. Il dettaglio «He could not swim» non viene né confermato né ritirato dopo la rivelazione: è un vuoto, non una seconda contraddizione."
+    }
+  ]
+}

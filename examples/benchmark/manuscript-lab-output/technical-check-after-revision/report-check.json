@@ -1,0 +1,314 @@
+{
+  "format_version": 1,
+  "document_type": "report_check",
+  "semantic_correctness": "not_assessed",
+  "limit": "Matching quotations and identifiers does not establish the semantic correctness of the report.",
+  "quotations": [
+    {
+      "kind": "blockquote",
+      "line": 24,
+      "paragraph_id": "p0007-ca912f37",
+      "quote": "There is an attic. It leaks. Copy these pages before morning and the room is yours.",
+      "quote_check": "verified_exact",
+      "found_in": [
+        "p0007-ca912f37"
+      ],
+      "alignment": "inside_quotation",
+      "editorial_judgment": "not_assessed"
+    },
+    {
+      "kind": "blockquote",
+      "line": 28,
+      "paragraph_id": "p0008-a2a8dabe",
+      "quote": "Elena set her wet gloves on the ledger and waited. She wanted the room. He wanted the pages copied. Neither of them named the price again.",
+      "quote_check": "verified_exact",
+      "found_in": [
+        "p0008-a2a8dabe"
+      ],
+      "alignment": "boundary",
+      "editorial_judgment": "not_assessed"
+    },
+    {
+      "kind": "blockquote",
+      "line": 48,
+      "paragraph_id": "p0002-5301192b",
+      "quote": "The rain reached the coast on Tuesday, 12 March, and turned the lane to the inn into a strip of black mud.",
+      "quote_check": "verified_exact",
+      "found_in": [
+        "p0002-5301192b"
+      ],
+      "alignment": "boundary",
+      "editorial_judgment": "not_assessed"
+    },
+    {
+      "kind": "blockquote",
+      "line": 52,
+      "paragraph_id": "p0012-92d34441",
+      "quote": "On Wednesday, 12 March, the rain had not stopped.",
+      "quote_check": "verified_exact",
+      "found_in": [
+        "p0012-92d34441"
+      ],
+      "alignment": "boundary",
+      "editorial_judgment": "not_assessed"
+    },
+    {
+      "kind": "blockquote",
+      "line": 70,
+      "paragraph_id": "p0003-77d1bf48",
+      "quote": "Her green eyes stung from the salt wind.",
+      "quote_check": "verified_exact",
+      "found_in": [
+        "p0003-77d1bf48"
+      ],
+      "alignment": "boundary",
+      "editorial_judgment": "not_assessed"
+    },
+    {
+      "kind": "blockquote",
+      "line": 74,
+      "paragraph_id": "p0018-62924bea",
+      "quote": "Her blue eyes were bloodshot, and the crack in the glass split the left one in two.",
+      "quote_check": "verified_exact",
+      "found_in": [
+        "p0018-62924bea"
+      ],
+      "alignment": "boundary",
+      "editorial_judgment": "not_assessed"
+    },
+    {
+      "kind": "blockquote",
+      "line": 78,
+      "paragraph_id": "p0020-a55b2b9c",
+      "quote": "Elena closed the ledger.",
+      "quote_check": "verified_exact",
+      "found_in": [
+        "p0020-a55b2b9c"
+      ],
+      "alignment": "boundary",
+      "editorial_judgment": "not_assessed"
+    },
+    {
+      "kind": "blockquote",
+      "line": 122,
+      "paragraph_id": "p0004-3addb449",
+      "quote": "The inn had been founded in 1888. A brass plate said so beside the key rack, and Tomas wiped it with his sleeve as if the date might smear.",
+      "quote_check": "verified_exact",
+      "found_in": [
+        "p0004-3addb449"
+      ],
+      "alignment": "boundary",
+      "editorial_judgment": "not_assessed"
+    },
+    {
+      "kind": "blockquote",
+      "line": 126,
+      "paragraph_id": "p0013-63e32715",
+      "quote": "The inn had been founded in 1888.",
+      "quote_check": "verified_exact",
+      "found_in": [
+        "p0013-63e32715"
+      ],
+      "alignment": "boundary",
+      "editorial_judgment": "not_assessed"
+    },
+    {
+      "kind": "blockquote",
+      "line": 130,
+      "paragraph_id": "p0019-d15ea036",
+      "quote": "A guest buttered his bread and said, \"The inn was founded in 1888.\" No one had asked. He nodded at his own remark and added, \"Founded in 1888, yes.\"",
+      "quote_check": "verified_exact",
+      "found_in": [
+        "p0019-d15ea036"
+      ],
+      "alignment": "boundary",
+      "editorial_judgment": "not_assessed"
+    },
+    {
+      "kind": "blockquote",
+      "line": 156,
+      "paragraph_id": "p0014-276e81c7",
+      "quote": "That Monday was months ago. It was not this storm, and it was not the day of the letter.",
+      "quote_check": "verified_exact",
+      "found_in": [
+        "p0014-276e81c7"
+      ],
+      "alignment": "boundary",
+      "editorial_judgment": "not_assessed"
+    },
+    {
+      "kind": "blockquote",
+      "line": 190,
+      "paragraph_id": "p0009-c055f756",
+      "quote": "My brother Marco drowned in the inlet",
+      "quote_check": "verified_exact",
+      "found_in": [
+        "p0009-c055f756"
+      ],
+      "alignment": "inside_quotation",
+      "editorial_judgment": "not_assessed"
+    },
+    {
+      "kind": "blockquote",
+      "line": 194,
+      "paragraph_id": "p0015-963b80ed",
+      "quote": "I am in the capital. Do not tell them I can still write. — Marco",
+      "quote_check": "verified_exact",
+      "found_in": [
+        "p0015-963b80ed"
+      ],
+      "alignment": "inside_quotation",
+      "editorial_judgment": "not_assessed"
+    },
+    {
+      "kind": "blockquote",
+      "line": 200,
+      "paragraph_id": "p0022-3cb54ae3",
+      "quote": "Marco was in the attic, alive, with ink on his fingers. The letter was his. Tomas had invented the drowning for strangers who asked too many questions.",
+      "quote_check": "verified_exact",
+      "found_in": [
+        "p0022-3cb54ae3"
+      ],
+      "alignment": "boundary",
+      "editorial_judgment": "not_assessed"
+    },
+    {
+      "kind": "blockquote",
+      "line": 204,
+      "paragraph_id": "p0023-aceb760d",
+      "quote": "I never drowned,\" Marco said. \"He tells that story so people stop looking.",
+      "quote_check": "verified_exact",
+      "found_in": [
+        "p0023-aceb760d"
+      ],
+      "alignment": "inside_quotation",
+      "editorial_judgment": "not_assessed"
+    },
+    {
+      "kind": "inline",
+      "line": 34,
+      "paragraph_id": null,
+      "quote": "She wanted the room",
+      "quote_check": "verified_exact",
+      "found_in": [
+        "p0008-a2a8dabe"
+      ],
+      "alignment": "boundary",
+      "editorial_judgment": "not_assessed"
+    },
+    {
+      "kind": "inline",
+      "line": 34,
+      "paragraph_id": null,
+      "quote": "He wanted the pages copied",
+      "quote_check": "verified_exact",
+      "found_in": [
+        "p0008-a2a8dabe"
+      ],
+      "alignment": "boundary",
+      "editorial_judgment": "not_assessed"
+    },
+    {
+      "kind": "inline",
+      "line": 56,
+      "paragraph_id": null,
+      "quote": "prima di mattina",
+      "quote_check": "not_found",
+      "found_in": [],
+      "alignment": "not_applicable",
+      "editorial_judgment": "not_assessed"
+    },
+    {
+      "kind": "inline",
+      "line": 142,
+      "paragraph_id": null,
+      "quote": "Then the letter was not a contradiction",
+      "quote_check": "verified_exact",
+      "found_in": [
+        "p0024-20fd1449"
+      ],
+      "alignment": "inside_quotation",
+      "editorial_judgment": "not_assessed"
+    },
+    {
+      "kind": "inline",
+      "line": 152,
+      "paragraph_id": null,
+      "quote": "the attic key was still in her pocket",
+      "quote_check": "verified_exact",
+      "found_in": [
+        "p0020-a55b2b9c"
+      ],
+      "alignment": "boundary",
+      "editorial_judgment": "not_assessed"
+    },
+    {
+      "kind": "inline",
+      "line": 160,
+      "paragraph_id": null,
+      "quote": "Wrong house",
+      "quote_check": "verified_exact",
+      "found_in": [
+        "p0016-7e807238"
+      ],
+      "alignment": "inside_quotation",
+      "editorial_judgment": "not_assessed"
+    },
+    {
+      "kind": "inline",
+      "line": 162,
+      "paragraph_id": null,
+      "quote": "He could not swim",
+      "quote_check": "verified_exact",
+      "found_in": [
+        "p0009-c055f756"
+      ],
+      "alignment": "inside_quotation",
+      "editorial_judgment": "not_assessed"
+    },
+    {
+      "kind": "inline",
+      "line": 172,
+      "paragraph_id": null,
+      "quote": "Wrong house",
+      "quote_check": "verified_exact",
+      "found_in": [
+        "p0016-7e807238"
+      ],
+      "alignment": "inside_quotation",
+      "editorial_judgment": "not_assessed"
+    },
+    {
+      "kind": "inline",
+      "line": 220,
+      "paragraph_id": null,
+      "quote": "The inn had been founded in 1888.",
+      "quote_check": "verified_exact",
+      "found_in": [
+        "p0004-3addb449",
+        "p0013-63e32715"
+      ],
+      "alignment": "boundary",
+      "editorial_judgment": "not_assessed"
+    }
+  ],
+  "errors": [
+    "Line 56: unverified inline quotation: prima di mattina"
+  ],
+  "warnings": [
+    "Line 24: quotation matches inside_quotation in the manuscript.",
+    "Line 190: quotation matches inside_quotation in the manuscript.",
+    "Line 194: quotation matches inside_quotation in the manuscript.",
+    "Line 204: quotation matches inside_quotation in the manuscript.",
+    "Line 142: quotation matches inside_quotation in the manuscript.",
+    "Line 160: quotation matches inside_quotation in the manuscript.",
+    "Line 162: quotation matches inside_quotation in the manuscript.",
+    "Line 172: quotation matches inside_quotation in the manuscript."
+  ],
+  "counts": {
+    "verified_exact": 23,
+    "verified_normalized": 0,
+    "not_found": 1,
+    "not_found_at_cited_paragraph": 0
+  }
+}

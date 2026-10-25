@@ -1,0 +1,240 @@
+{
+  "format_version": 1,
+  "document_type": "extract",
+  "source": {
+    "path": "examples/benchmark/the-lantern-house.md",
+    "name": "the-lantern-house.md",
+    "format": "markdown",
+    "sha256": "866affb434a228f4b9da343a1777015898e53160ab94cabe3aa52899fe4f36df",
+    "byte_length": 2565,
+    "encoding": "utf-8"
+  },
+  "warnings": [],
+  "paragraphs": [
+    {
+      "text": "Chapter 1. The Attic Bargain",
+      "raw": "# Chapter 1. The Attic Bargain",
+      "kind": "heading",
+      "heading_level": 1,
+      "heading_source": "markdown",
+      "word_count": 5,
+      "ordinal": 1
+    },
+    {
+      "text": "The rain reached the coast on Tuesday, 12 March, and turned the lane to the inn into a strip of black mud.",
+      "raw": "The rain reached the coast on Tuesday, 12 March, and turned the lane to the inn into a strip of black mud.",
+      "kind": "prose",
+      "heading_level": null,
+      "heading_source": null,
+      "word_count": 22,
+      "ordinal": 2
+    },
+    {
+      "text": "Elena pushed the door open. Her green eyes stung from the salt wind. She had come for one night and a dry book, nothing more.",
+      "raw": "Elena pushed the door open. Her green eyes stung from the salt wind. She had come for one night and a dry book, nothing more.",
+      "kind": "prose",
+      "heading_level": null,
+      "heading_source": null,
+      "word_count": 25,
+      "ordinal": 3
+    },
+    {
+      "text": "The inn had been founded in 1888. A brass plate said so beside the key rack, and Tomas wiped it with his sleeve as if the date might smear.",
+      "raw": "The inn had been founded in 1888. A brass plate said so beside the key rack, and Tomas wiped it with his sleeve as if the date might smear.",
+      "kind": "prose",
+      "heading_level": null,
+      "heading_source": null,
+      "word_count": 29,
+      "ordinal": 4
+    },
+    {
+      "text": "\"We are full,\" Tomas said.",
+      "raw": "\"We are full,\" Tomas said.",
+      "kind": "prose",
+      "heading_level": null,
+      "heading_source": null,
+      "word_count": 5,
+      "ordinal": 5
+    },
+    {
+      "text": "\"Then I will sit in the kitchen until you are not.\"",
+      "raw": "\"Then I will sit in the kitchen until you are not.\"",
+      "kind": "prose",
+      "heading_level": null,
+      "heading_source": null,
+      "word_count": 11,
+      "ordinal": 6
+    },
+    {
+      "text": "He looked at the ledger, then at the water pooling under her boots. \"There is an attic. It leaks. Copy these pages before morning and the room is yours.\"",
+      "raw": "He looked at the ledger, then at the water pooling under her boots. \"There is an attic. It leaks. Copy these pages before morning and the room is yours.\"",
+      "kind": "prose",
+      "heading_level": null,
+      "heading_source": null,
+      "word_count": 29,
+      "ordinal": 7
+    },
+    {
+      "text": "Elena set her wet gloves on the ledger and waited. She wanted the room. He wanted the pages copied. Neither of them named the price again.",
+      "raw": "Elena set her wet gloves on the ledger and waited. She wanted the room. He wanted the pages copied. Neither of them named the price again.",
+      "kind": "prose",
+      "heading_level": null,
+      "heading_source": null,
+      "word_count": 26,
+      "ordinal": 8
+    },
+    {
+      "text": "\"My brother Marco drowned in the inlet,\" Tomas said, once the soup was thin and the other guests had gone quiet. \"He could not swim. I do not talk about him.\"",
+      "raw": "\"My brother Marco drowned in the inlet,\" Tomas said, once the soup was thin and the other guests had gone quiet. \"He could not swim. I do not talk about him.\"",
+      "kind": "prose",
+      "heading_level": null,
+      "heading_source": null,
+      "word_count": 31,
+      "ordinal": 9
+    },
+    {
+      "text": "Elena did not answer. The rain kept its own count against the shutters.",
+      "raw": "Elena did not answer. The rain kept its own count against the shutters.",
+      "kind": "prose",
+      "heading_level": null,
+      "heading_source": null,
+      "word_count": 13,
+      "ordinal": 10
+    },
+    {
+      "text": "Chapter 2. The Letter",
+      "raw": "# Chapter 2. The Letter",
+      "kind": "heading",
+      "heading_level": 1,
+      "heading_source": "markdown",
+      "word_count": 4,
+      "ordinal": 11
+    },
+    {
+      "text": "On Wednesday, 12 March, the rain had not stopped.",
+      "raw": "On Wednesday, 12 March, the rain had not stopped.",
+      "kind": "prose",
+      "heading_level": null,
+      "heading_source": null,
+      "word_count": 9,
+      "ordinal": 12
+    },
+    {
+      "text": "The inn had been founded in 1888.",
+      "raw": "The inn had been founded in 1888.",
+      "kind": "prose",
+      "heading_level": null,
+      "heading_source": null,
+      "word_count": 7,
+      "ordinal": 13
+    },
+    {
+      "text": "Elena dried the ledger with her cuff. In the winter before this storm, on a clear Monday with no rain at all, she had stood in the same lane and turned back. That Monday was months ago. It was not this storm, and it was not the day of the letter.",
+      "raw": "Elena dried the ledger with her cuff. In the winter before this storm, on a clear Monday with no rain at all, she had stood in the same lane and turned back. That Monday was months ago. It was not this storm, and it was not the day of the letter.",
+      "kind": "prose",
+      "heading_level": null,
+      "heading_source": null,
+      "word_count": 51,
+      "ordinal": 14
+    },
+    {
+      "text": "A letter came at dusk. Tomas set it on the bar and did not open it. The last line was plain enough from where Elena stood: \"I am in the capital. Do not tell them I can still write. — Marco\"",
+      "raw": "A letter came at dusk. Tomas set it on the bar and did not open it. The last line was plain enough from where Elena stood: \"I am in the capital. Do not tell them I can still write. — Marco\"",
+      "kind": "prose",
+      "heading_level": null,
+      "heading_source": null,
+      "word_count": 41,
+      "ordinal": 15
+    },
+    {
+      "text": "\"Wrong house,\" Tomas said, and left the letter where it was.",
+      "raw": "\"Wrong house,\" Tomas said, and left the letter where it was.",
+      "kind": "prose",
+      "heading_level": null,
+      "heading_source": null,
+      "word_count": 11,
+      "ordinal": 16
+    },
+    {
+      "text": "Chapter 3. The Mirror",
+      "raw": "# Chapter 3. The Mirror",
+      "kind": "heading",
+      "heading_level": 1,
+      "heading_source": "markdown",
+      "word_count": 4,
+      "ordinal": 17
+    },
+    {
+      "text": "Morning light made a poor mirror of the window. Her blue eyes were bloodshot, and the crack in the glass split the left one in two.",
+      "raw": "Morning light made a poor mirror of the window. Her blue eyes were bloodshot, and the crack in the glass split the left one in two.",
+      "kind": "prose",
+      "heading_level": null,
+      "heading_source": null,
+      "word_count": 26,
+      "ordinal": 18
+    },
+    {
+      "text": "A guest buttered his bread and said, \"The inn was founded in 1888.\" No one had asked. He nodded at his own remark and added, \"Founded in 1888, yes.\"",
+      "raw": "A guest buttered his bread and said, \"The inn was founded in 1888.\" No one had asked. He nodded at his own remark and added, \"Founded in 1888, yes.\"",
+      "kind": "prose",
+      "heading_level": null,
+      "heading_source": null,
+      "word_count": 29,
+      "ordinal": 19
+    },
+    {
+      "text": "Elena closed the ledger. The totals still matched the pages she had copied, and the attic key was still in her pocket.",
+      "raw": "Elena closed the ledger. The totals still matched the pages she had copied, and the attic key was still in her pocket.",
+      "kind": "prose",
+      "heading_level": null,
+      "heading_source": null,
+      "word_count": 22,
+      "ordinal": 20
+    },
+    {
+      "text": "Chapter 4. What the Attic Held",
+      "raw": "# Chapter 4. What the Attic Held",
+      "kind": "heading",
+      "heading_level": 1,
+      "heading_source": "markdown",
+      "word_count": 6,
+      "ordinal": 21
+    },
+    {
+      "text": "Marco was in the attic, alive, with ink on his fingers. The letter was his. Tomas had invented the drowning for strangers who asked too many questions.",
+      "raw": "Marco was in the attic, alive, with ink on his fingers. The letter was his. Tomas had invented the drowning for strangers who asked too many questions.",
+      "kind": "prose",
+      "heading_level": null,
+      "heading_source": null,
+      "word_count": 27,
+      "ordinal": 22
+    },
+    {
+      "text": "\"I never drowned,\" Marco said. \"He tells that story so people stop looking.\"",
+      "raw": "\"I never drowned,\" Marco said. \"He tells that story so people stop looking.\"",
+      "kind": "prose",
+      "heading_level": null,
+      "heading_source": null,
+      "word_count": 13,
+      "ordinal": 23
+    },
+    {
+      "text": "Elena put the attic key on the crate between them. \"Then the letter was not a contradiction. It was the part he hid.\"",
+      "raw": "Elena put the attic key on the crate between them. \"Then the letter was not a contradiction. It was the part he hid.\"",
+      "kind": "prose",
+      "heading_level": null,
+      "heading_source": null,
+      "word_count": 23,
+      "ordinal": 24
+    },
+    {
+      "text": "Below them, the rain eased, and the lane began to show its stones again.",
+      "raw": "Below them, the rain eased, and the lane began to show its stones again.",
+      "kind": "prose",
+      "heading_level": null,
+      "heading_source": null,
+      "word_count": 14,
+      "ordinal": 25
+    }
+  ]
+}

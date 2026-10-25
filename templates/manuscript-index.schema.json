@@ -1,0 +1,147 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "manuscript-lab/manuscript-index.schema.json",
+  "title": "Manuscript Lab index",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "format_version",
+    "document_type",
+    "source",
+    "segmentation",
+    "counts",
+    "chapters",
+    "paragraphs"
+  ],
+  "properties": {
+    "format_version": { "const": 1 },
+    "document_type": { "const": "index" },
+    "source": { "$ref": "#/$defs/source" },
+    "segmentation": { "$ref": "#/$defs/segmentation" },
+    "counts": { "$ref": "#/$defs/counts" },
+    "chapters": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/chapter" }
+    },
+    "paragraphs": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/paragraph" }
+    }
+  },
+  "$defs": {
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "path",
+        "name",
+        "format",
+        "sha256",
+        "byte_length",
+        "encoding",
+        "available"
+      ],
+      "properties": {
+        "path": { "type": "string", "minLength": 1 },
+        "name": { "type": "string", "minLength": 1 },
+        "format": { "type": "string", "enum": ["docx", "txt", "markdown"] },
+        "sha256": { "type": "string", "pattern": "[0-9a-f]{64}" },
+        "byte_length": { "type": "integer" },
+        "encoding": { "type": "string", "minLength": 1 },
+        "available": { "type": "boolean" }
+      }
+    },
+    "segmentation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["ambiguous", "method", "notes", "candidates"],
+      "properties": {
+        "ambiguous": { "type": "boolean" },
+        "method": {
+          "type": "string",
+          "enum": ["explicit-chapter-title", "docx-heading-1", "unsegmented"]
+        },
+        "notes": { "type": "array", "items": { "type": "string" } },
+        "candidates": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/candidate" }
+        }
+      }
+    },
+    "candidate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["ordinal", "text", "reason"],
+      "properties": {
+        "ordinal": { "type": "integer" },
+        "text": { "type": "string", "minLength": 1 },
+        "reason": {
+          "type": "string",
+          "enum": ["explicit-chapter-title", "docx-heading", "markdown-heading"]
+        }
+      }
+    },
+    "counts": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["words", "paragraphs", "chapters"],
+      "properties": {
+        "words": { "type": "integer" },
+        "paragraphs": { "type": "integer" },
+        "chapters": { "type": "integer" }
+      }
+    },
+    "chapter": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "ordinal", "title", "role", "paragraph_ids", "word_count"],
+      "properties": {
+        "id": { "type": "string", "pattern": "c[0-9]{3}" },
+        "ordinal": { "type": "integer" },
+        "title": { "type": "string", "minLength": 1 },
+        "role": { "type": "string", "enum": ["chapter", "front-matter"] },
+        "paragraph_ids": {
+          "type": "array",
+          "items": { "type": "string", "pattern": "p[0-9]{4,}-[0-9a-f]{8}" }
+        },
+        "word_count": { "type": "integer" }
+      }
+    },
+    "paragraph": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "ordinal",
+        "chapter_id",
+        "kind",
+        "structural_role",
+        "heading_level",
+        "heading_source",
+        "text",
+        "raw",
+        "word_count",
+        "preview"
+      ],
+      "properties": {
+        "id": { "type": "string", "pattern": "p[0-9]{4,}-[0-9a-f]{8}" },
+        "ordinal": { "type": "integer" },
+        "chapter_id": { "type": ["string", "null"], "pattern": "c[0-9]{3}" },
+        "kind": { "type": "string", "enum": ["prose", "heading"] },
+        "structural_role": {
+          "type": "string",
+          "enum": ["chapter-heading", "subheading", "body"]
+        },
+        "heading_level": { "type": ["integer", "null"] },
+        "heading_source": {
+          "type": ["string", "null"],
+          "enum": ["markdown", "docx", null]
+        },
+        "text": { "type": "string", "minLength": 1 },
+        "raw": { "type": "string", "minLength": 1 },
+        "word_count": { "type": "integer" },
+        "preview": { "type": "string" }
+      }
+    }
+  }
+}

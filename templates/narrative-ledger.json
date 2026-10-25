@@ -1,0 +1,13 @@
+{
+  "format_version": 1,
+  "document_type": "narrative-ledger",
+  "document_note": "Shape example. Replace the hash with the index hash and add entries only for claims the text supports. An empty list is valid.",
+  "manuscript_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+  "reading": {
+    "chapters_opened": [],
+    "paragraphs_reread": [],
+    "not_fully_read": [],
+    "note": "Opening a chapter id does not mean the chapter was read in full."
+  },
+  "entries": []
+}

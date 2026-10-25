@@ -1,0 +1,148 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "manuscript-lab/decision-audit.schema.json",
+  "title": "Manuscript Lab decision audit",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "format_version",
+    "document_type",
+    "manuscript_sha256",
+    "decisions"
+  ],
+  "properties": {
+    "format_version": { "const": 1 },
+    "document_type": { "const": "decision-audit" },
+    "document_note": { "type": "string" },
+    "manuscript_sha256": {
+      "type": "string",
+      "pattern": "[0-9a-f]{64}"
+    },
+    "decisions": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/decision" }
+    }
+  },
+  "$defs": {
+    "decision": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "character",
+        "decision",
+        "objective",
+        "information_available",
+        "withheld_from_character",
+        "explicit_motives",
+        "implicit_motives",
+        "motive_support",
+        "obstacles",
+        "obstacle_outcome",
+        "emotional_conflict",
+        "consequences",
+        "alternatives",
+        "paragraph_ids",
+        "later_paragraph_ids",
+        "evidence",
+        "assessment",
+        "warrants_finding"
+      ],
+      "properties": {
+        "id": { "type": "string", "pattern": "DA-[0-9]{3,}" },
+        "character": { "type": "string", "minLength": 1 },
+        "decision": { "type": "string", "minLength": 1 },
+        "objective": { "type": "string", "minLength": 1 },
+        "information_available": { "type": "string", "minLength": 1 },
+        "withheld_from_character": { "type": "string" },
+        "explicit_motives": { "type": "string" },
+        "implicit_motives": { "type": "string" },
+        "motive_support": {
+          "type": "string",
+          "enum": ["supported", "thin", "absent", "clarified_later"]
+        },
+        "obstacles": { "type": "string" },
+        "obstacle_outcome": {
+          "type": "string",
+          "enum": ["not_applicable", "stands", "overcome_on_the_page", "removed_without_explanation"]
+        },
+        "emotional_conflict": { "type": "string" },
+        "consequences": { "type": "string" },
+        "alternatives": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/alternative" }
+        },
+        "paragraph_ids": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "type": "string", "pattern": "p[0-9]{4,}-[0-9a-f]{8}" }
+        },
+        "later_paragraph_ids": {
+          "type": "array",
+          "items": { "type": "string", "pattern": "p[0-9]{4,}-[0-9a-f]{8}" }
+        },
+        "ledger_entry_ids": {
+          "type": "array",
+          "items": { "type": "string", "pattern": "NF-[0-9]{3,}" }
+        },
+        "evidence": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "$ref": "#/$defs/evidence" }
+        },
+        "assessment": {
+          "type": "string",
+          "enum": ["credible", "under_motivated", "obstacle_unexplained", "resolved_later"]
+        },
+        "warrants_finding": { "type": "boolean" },
+        "notes": { "type": "string" }
+      }
+    },
+    "alternative": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "description",
+        "known_to_character",
+        "reasonably_perceivable",
+        "disposition",
+        "paragraph_ids"
+      ],
+      "properties": {
+        "description": { "type": "string", "minLength": 1 },
+        "known_to_character": { "type": "boolean" },
+        "reasonably_perceivable": { "type": "boolean" },
+        "disposition": {
+          "type": "string",
+          "enum": ["unavailable", "consciously_refused", "ignored", "not_applicable"]
+        },
+        "paragraph_ids": {
+          "type": "array",
+          "items": { "type": "string", "pattern": "p[0-9]{4,}-[0-9a-f]{8}" }
+        }
+      }
+    },
+    "evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["paragraph_id", "quote", "quote_check"],
+      "properties": {
+        "paragraph_id": {
+          "type": "string",
+          "pattern": "p[0-9]{4,}-[0-9a-f]{8}"
+        },
+        "quote": { "type": "string", "minLength": 8 },
+        "quote_check": {
+          "type": "string",
+          "enum": [
+            "unchecked",
+            "verified_exact",
+            "verified_normalized",
+            "not_found",
+            "not_found_at_cited_paragraph"
+          ]
+        }
+      }
+    }
+  }
+}

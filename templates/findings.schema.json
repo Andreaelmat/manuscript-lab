@@ -1,0 +1,178 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "manuscript-lab/findings.schema.json",
+  "title": "Manuscript Lab findings",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "format_version",
+    "manuscript_sha256",
+    "mode",
+    "depth",
+    "report_language",
+    "scope_chapters",
+    "independent_review",
+    "findings"
+  ],
+  "properties": {
+    "format_version": { "type": "integer", "enum": [1, 2] },
+    "document_note": { "type": "string" },
+    "manuscript_sha256": {
+      "type": "string",
+      "pattern": "[0-9a-f]{64}"
+    },
+    "mode": {
+      "type": "string",
+      "enum": [
+        "full",
+        "developmental",
+        "continuity",
+        "dialogue-style",
+        "critical-verification"
+      ]
+    },
+    "depth": {
+      "type": "string",
+      "enum": ["survey", "standard", "deep"]
+    },
+    "report_language": {
+      "type": "string",
+      "minLength": 2,
+      "maxLength": 35
+    },
+    "scope_chapters": {
+      "type": "array",
+      "items": { "type": "string", "pattern": "c[0-9]{3}" }
+    },
+    "independent_review": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "requested",
+        "performed",
+        "reviewer_model",
+        "same_as_primary_model",
+        "note"
+      ],
+      "properties": {
+        "requested": { "type": "boolean" },
+        "performed": { "type": "boolean" },
+        "reviewer_model": { "type": "string" },
+        "same_as_primary_model": { "type": ["boolean", "null"] },
+        "note": { "type": "string" }
+      }
+    },
+    "findings": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/finding" }
+    }
+  },
+  "$defs": {
+    "finding": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "category",
+        "title",
+        "description",
+        "chapters",
+        "paragraph_ids",
+        "evidence",
+        "explanation",
+        "narrative_impact",
+        "priority",
+        "suggested_intervention",
+        "counterarguments",
+        "uncertainty"
+      ],
+      "properties": {
+        "id": { "type": "string", "pattern": "F-[0-9]{3,}" },
+        "category": {
+          "type": "string",
+          "enum": [
+            "structure",
+            "character",
+            "pacing",
+            "dialogue",
+            "style",
+            "repetition",
+            "continuity",
+            "information",
+            "opening",
+            "ending",
+            "theme",
+            "strength",
+            "other"
+          ]
+        },
+        "title": { "type": "string", "minLength": 1 },
+        "description": { "type": "string", "minLength": 1 },
+        "chapters": {
+          "type": "array",
+          "items": { "type": "string", "pattern": "c[0-9]{3}" }
+        },
+        "paragraph_ids": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "type": "string", "pattern": "p[0-9]{4,}-[0-9a-f]{8}" }
+        },
+        "evidence": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "$ref": "#/$defs/evidence" }
+        },
+        "explanation": { "type": "string", "minLength": 1 },
+        "narrative_impact": { "type": "string", "minLength": 1 },
+        "priority": {
+          "type": "string",
+          "enum": ["high", "medium", "low", "none"]
+        },
+        "nature": {
+          "type": "string",
+          "enum": ["factual", "interpretive", "strength"]
+        },
+        "editorial_status": {
+          "type": "string",
+          "enum": ["unreviewed", "confirmed", "downgraded", "rejected"]
+        },
+        "judgment_type": {
+          "type": "string",
+          "enum": ["factual", "interpretive"]
+        },
+        "suggested_intervention": { "type": "string", "minLength": 1 },
+        "counterarguments": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 }
+        },
+        "verification_status": {
+          "type": "string",
+          "enum": ["unreviewed", "confirmed", "downgraded", "rejected"]
+        },
+        "uncertainty": { "type": "string" }
+      }
+    },
+    "evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["paragraph_id", "quote", "quote_check"],
+      "properties": {
+        "paragraph_id": {
+          "type": "string",
+          "pattern": "p[0-9]{4,}-[0-9a-f]{8}"
+        },
+        "quote": { "type": "string", "minLength": 8 },
+        "quote_check": {
+          "type": "string",
+          "enum": [
+            "unchecked",
+            "verified_exact",
+            "verified_normalized",
+            "not_found",
+            "not_found_at_cited_paragraph"
+          ]
+        }
+      }
+    }
+  }
+}

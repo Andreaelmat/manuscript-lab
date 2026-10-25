@@ -1,0 +1,139 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "manuscript-lab/narrative-ledger.schema.json",
+  "title": "Manuscript Lab narrative fact ledger",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "format_version",
+    "document_type",
+    "manuscript_sha256",
+    "entries"
+  ],
+  "properties": {
+    "format_version": { "const": 1 },
+    "document_type": { "const": "narrative-ledger" },
+    "document_note": { "type": "string" },
+    "manuscript_sha256": {
+      "type": "string",
+      "pattern": "[0-9a-f]{64}"
+    },
+    "reading": { "$ref": "#/$defs/reading" },
+    "entries": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/entry" }
+    }
+  },
+  "$defs": {
+    "reading": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["chapters_opened", "paragraphs_reread", "not_fully_read", "note"],
+      "properties": {
+        "chapters_opened": {
+          "type": "array",
+          "items": { "type": "string", "pattern": "c[0-9]{3}" }
+        },
+        "paragraphs_reread": {
+          "type": "array",
+          "items": { "type": "string", "pattern": "p[0-9]{4,}-[0-9a-f]{8}" }
+        },
+        "not_fully_read": {
+          "type": "array",
+          "items": { "type": "string", "pattern": "c[0-9]{3}" }
+        },
+        "note": { "type": "string" }
+      }
+    },
+    "entry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "statement",
+        "subjects",
+        "event_time",
+        "narration_time",
+        "place",
+        "source",
+        "paragraph_ids",
+        "evidence",
+        "certainty",
+        "claim_kind",
+        "incompatible_with",
+        "revised_by"
+      ],
+      "properties": {
+        "id": { "type": "string", "pattern": "NF-[0-9]{3,}" },
+        "statement": { "type": "string", "minLength": 1 },
+        "subjects": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 }
+        },
+        "event_time": { "type": "string" },
+        "narration_time": { "type": "string" },
+        "place": { "type": "string" },
+        "source": {
+          "type": "string",
+          "enum": ["narrator", "dialogue", "memory", "document", "inference"]
+        },
+        "source_note": { "type": "string" },
+        "paragraph_ids": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "type": "string", "pattern": "p[0-9]{4,}-[0-9a-f]{8}" }
+        },
+        "evidence": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "$ref": "#/$defs/evidence" }
+        },
+        "certainty": {
+          "type": "string",
+          "enum": ["certain", "contested", "revised", "unknown"]
+        },
+        "claim_kind": {
+          "type": "string",
+          "enum": [
+            "narrated_fact",
+            "potentially_false_statement",
+            "character_knowledge",
+            "hypothesis",
+            "withheld_from_reader"
+          ]
+        },
+        "incompatible_with": {
+          "type": "array",
+          "items": { "type": "string", "pattern": "NF-[0-9]{3,}" }
+        },
+        "revised_by": {
+          "type": "array",
+          "items": { "type": "string", "pattern": "NF-[0-9]{3,}" }
+        },
+        "notes": { "type": "string" }
+      }
+    },
+    "evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["paragraph_id", "quote", "quote_check"],
+      "properties": {
+        "paragraph_id": {
+          "type": "string",
+          "pattern": "p[0-9]{4,}-[0-9a-f]{8}"
+        },
+        "quote": { "type": "string", "minLength": 8 },
+        "quote_check": {
+          "type": "string",
+          "enum": [
+            "unchecked",
+            "verified_exact",
+            "verified_normalized",
+            "not_found",
+            "not_found_at_cited_paragraph"
+          ]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "format_version": 2,
+  "document_note": "Format example for the benchmark fixture. It is not a complete review and is not evidence that the skill's editorial judgment has been validated.",
+  "manuscript_sha256": "866affb434a228f4b9da343a1777015898e53160ab94cabe3aa52899fe4f36df",
+  "mode": "full",
+  "depth": "standard",
+  "report_language": "en",
+  "scope_chapters": [],
+  "independent_review": {
+    "requested": false,
+    "performed": false,
+    "reviewer_model": "",
+    "same_as_primary_model": null,
+    "note": "No second model was requested."
+  },
+  "findings": [
+    {
+      "id": "F-001",
+      "category": "continuity",
+      "title": "12 March is both Tuesday and Wednesday",
+      "description": "The narration dates the storm to Tuesday, 12 March, and later to Wednesday, 12 March.",
+      "chapters": ["c001", "c002"],
+      "paragraph_ids": ["p0002-5301192b", "p0012-92d34441"],
+      "evidence": [
+        {
+          "paragraph_id": "p0002-5301192b",
+          "quote": "The rain reached the coast on Tuesday, 12 March, and turned the lane to the inn into a strip of black mud.",
+          "quote_check": "unchecked"
+        },
+        {
+          "paragraph_id": "p0012-92d34441",
+          "quote": "On Wednesday, 12 March, the rain had not stopped.",
+          "quote_check": "unchecked"
+        }
+      ],
+      "explanation": "Both sentences are narrator statements about the same calendar date. No later passage corrects the weekday.",
+      "narrative_impact": "A reader who is tracking the storm cannot tell which day the arrival and the letter occupy.",
+      "priority": "high",
+      "nature": "factual",
+      "editorial_status": "unreviewed",
+      "suggested_intervention": "Make the weekday of 12 March consistent, or mark one statement as a character's mistake.",
+      "counterarguments": [],
+      "uncertainty": ""
+    },
+    {
+      "id": "F-002",
+      "category": "strength",
+      "title": "The attic bargain holds",
+      "description": "Elena and Tomas each want something, and the scene ends without restating the price.",
+      "chapters": ["c001"],
+      "paragraph_ids": ["p0008-a2a8dabe"],
+      "evidence": [
+        {
+          "paragraph_id": "p0008-a2a8dabe",
+          "quote": "Elena set her wet gloves on the ledger and waited.",
+          "quote_check": "unchecked"
+        }
+      ],
+      "explanation": "The exchange has a want, an obstacle, and a turn. The narration does not explain the bargain again after the action has shown it.",
+      "narrative_impact": "The scene can stay as written. Changing it would discard a clear piece of pressure.",
+      "priority": "none",
+      "nature": "strength",
+      "editorial_status": "unreviewed",
+      "suggested_intervention": "None.",
+      "counterarguments": [],
+      "uncertainty": ""
+    }
+  ]
+}

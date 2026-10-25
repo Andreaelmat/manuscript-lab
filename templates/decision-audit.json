@@ -1,0 +1,7 @@
+{
+  "format_version": 1,
+  "document_type": "decision-audit",
+  "document_note": "Optional shape. Record only significant decision nodes. An empty list is valid. This file is not a score of the character's rationality.",
+  "manuscript_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+  "decisions": []
+}
